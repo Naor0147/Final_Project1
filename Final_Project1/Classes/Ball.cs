@@ -56,11 +56,11 @@ namespace Final_Project1.Classes
             this.y += this.vy;
             Canvas.SetLeft(ellipse, this.x);
             Canvas.SetTop(ellipse, this.y);
-            if (x >(canvas.acWidth-100) || x<0)
+            if (x >(canvas.ActualWidth*0.7-100) || x<0)//doesnt get the real height and width 
             {
                 this.vx = -5;
             }
-            if (y>(canvas.Height-100)|| y<0)
+            if (y>(canvas.ActualWidth*0.7-100)|| y<0)
             {
                 this.vy = -5;
             }

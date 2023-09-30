@@ -31,7 +31,7 @@ namespace Final_Project1.Pages
         {
             this.InitializeComponent();
           
-            _ball = new Ball(100,400,400,5,5,Canvas_game);
+            
 
             //Timer
             timer = new DispatcherTimer();
@@ -44,7 +44,16 @@ namespace Final_Project1.Pages
         private void Timer_Tick(object sender, object e)
         {
             Timer_text.Text = DateTime.Now.ToString("HH:mm:ss.fff");
-            _ball.moveBall();
+            if (_ball!= null)
+            {
+                _ball.moveBall();
+
+            }
+        }
+
+        private void Canvas_game_Loaded(object sender, RoutedEventArgs e)
+        {
+            _ball = new Ball(100, 400, 400, 5, 5, Canvas_game);
         }
     }
 }

@@ -15,7 +15,7 @@
             <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
         <TextBlock HorizontalAlignment="Center" FontSize="100" VerticalAlignment="Center" Canvas.Top="10" x:Name="Timer_text" Foreground="#001524"> Timer</TextBlock>
-        <Canvas Grid.Row="1" Background="#DAC0A3" x:Name="Canvas_game">
+        <Canvas Grid.Row="1" Background="#DAC0A3" x:Name="Canvas_game" Margin="20" Loaded="Canvas_game_Loaded" >
             
         </Canvas>
     </Grid>
