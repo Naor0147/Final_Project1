@@ -6,6 +6,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -25,11 +26,13 @@ namespace Final_Project1.Pages
     {
         public DispatcherTimer timer;
         public const double Gravity = 9.8;
+        Ball _ball;
         public GamePage1()
         {
             this.InitializeComponent();
+          
+            _ball = new Ball(100,400,400,5,5,Canvas_game);
 
-            Ball ball = new Ball(100,400,400,5,5,Canvas_game);
             //Timer
             timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromMilliseconds(5);
@@ -41,6 +44,7 @@ namespace Final_Project1.Pages
         private void Timer_Tick(object sender, object e)
         {
             Timer_text.Text = DateTime.Now.ToString("HH:mm:ss.fff");
+            _ball.moveBall();
         }
     }
 }
